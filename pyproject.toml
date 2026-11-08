@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "regression-engine"
+version = "0.1.0"
+description = "From-scratch statistical regression and correlation engine in NumPy/SciPy"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "brkogz", email = "berkogzsoftware@gmail.com" }
+]
+dependencies = [
+  "numpy>=1.24.0",
+  "scipy>=1.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4.0",
+  "scipy>=1.10.0",
+  "scikit-learn>=1.3.0",
+  "statsmodels>=0.14.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
